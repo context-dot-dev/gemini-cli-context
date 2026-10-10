@@ -38,20 +38,38 @@ test("does not embed credentials or bypass Gemini confirmations", () => {
   assert.equal("httpUrl" in manifest.mcpServers.context, false);
 });
 
-test("ships focused routing for every released Context capability", () => {
+test("ships focused routing for the current Context tool catalog", () => {
   assert.match(skill, /^---\nname: context-dev\ndescription: .+\n---\n/);
   for (const capability of [
     "get-news-search",
     "web-search",
-    "web-scrape-markdown",
+    "web-scrape",
+    "web-map",
     "web-crawl",
-    "web-extract",
+    "web-answers",
     "parse-document",
     "get-brand",
-    "web-screenshot",
+    "people-enrich",
+    "get-usage",
+    "get-usage-history",
+    "list-logs",
+    "get-log",
     "submit-batch",
+    "submit-feedback",
   ]) {
     assert.match(skill, new RegExp(`\\b${capability}\\b`));
   }
-  assert.doesNotMatch(skill, /`(?:web-)?answers?`|\/v1\/web\/answers/i);
+  for (const removedTool of [
+    "web-scrape-markdown",
+    "web-scrape-html",
+    "web-scrape-images",
+    "web-screenshot",
+    "web-scrape-sitemap",
+    "web-extract",
+    "web-fonts",
+    "web-naics",
+    "web-sic",
+  ]) {
+    assert.doesNotMatch(skill, new RegExp(`\\b${removedTool}\\b`));
+  }
 });

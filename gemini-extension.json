@@ -1,7 +1,7 @@
 {
   "name": "gemini-cli-context",
-  "version": "1.0.0",
-  "description": "Give Gemini CLI live web and document context through Context.dev search, news, scraping, crawling, extraction, parsing, brand intelligence, screenshots, monitors, and batches.",
+  "version": "1.1.0",
+  "description": "Give Gemini CLI live web and document context through Context.dev search, news, scraping, crawling, extraction, parsing, brand and people intelligence, usage, request logs, monitors, and batches.",
   "mcpServers": {
     "context": {
       "url": "https://mcp.context.dev/mcp",
