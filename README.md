@@ -1,6 +1,6 @@
 # Context.dev for Gemini CLI
 
-The official [Context.dev](https://context.dev) extension for [Gemini CLI](https://github.com/google-gemini/gemini-cli). Give Gemini live web and document context through search, company news, scraping, crawling, structured extraction, document parsing, brand intelligence, screenshots, website monitoring, and large batch jobs.
+The official [Context.dev](https://context.dev) extension for [Gemini CLI](https://github.com/google-gemini/gemini-cli). Give Gemini live web and document context through search, company news, scraping, crawling, structured extraction, document parsing, brand and people intelligence, account usage, request logs, website monitoring, and large batch jobs.
 
 ## Install
 
@@ -8,7 +8,7 @@ The official [Context.dev](https://context.dev) extension for [Gemini CLI](https
 gemini extensions install https://github.com/context-dot-dev/gemini-cli-context --auto-update --consent
 ```
 
-Start a new Gemini CLI session after installation. The first Context.dev request opens a browser for OAuth authentication; no API key needs to be copied into Gemini CLI.
+Start a new Gemini CLI session after installation. The first Context.dev request opens a browser for OAuth authentication; no API key needs to be copied into Gemini CLI. After updating the extension, run `/mcp reload` so Gemini refreshes the tool catalog without requiring a new login.
 
 If authentication does not start automatically, run this inside Gemini CLI:
 
@@ -47,7 +47,7 @@ Use Context.dev to retrieve the brand profile for linear.app, including its logo
 - The production Context.dev MCP server at `https://mcp.context.dev/mcp`
 - OAuth 2.1 authentication with dynamic client registration and PKCE
 - An on-demand Gemini CLI skill that routes tasks to the smallest suitable Context.dev tool
-- Live web search, company news, webpage and YouTube scraping, crawling, extraction, parsing, brand, screenshot, monitor, and batch workflows
+- Live web search, company news, webpage and YouTube scraping, crawling, extraction, parsing, brand, people, usage, request-log, monitor, and batch workflows
 
 Some Context.dev operations consume account credits. Gemini CLI keeps its normal confirmation controls for tool calls, and the extension does not mark the remote server as trusted.
 
@@ -63,7 +63,7 @@ npm run test:live
 gemini extensions link . --consent
 ```
 
-Restart Gemini CLI after linking the extension. Use `/mcp auth context` to authenticate, then run one of the example prompts above.
+Restart Gemini CLI after linking the extension. Use `/mcp reload` after an extension or server update. Use `/mcp auth context` only when authentication is required, then run one of the example prompts above.
 
 ## Uninstall
 
